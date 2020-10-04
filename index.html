@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Snake - Le Jeu</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Snake - Le Jeu</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button class="btn btn-default" id="launchGameButton">JOUER !</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="score-container d-flex align-items-center justify-content-center">
+                    <span class="score-label">SCORE : </span>
+                    <span id="score-amount"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="game-grid">
+                    <div class="row-grid">
+                        <span class="square first-row first-square" id="00"></span>
+                        <span class="square first-row" id="01"></span>
+                        <span class="square first-row" id="02"></span>
+                        <span class="square first-row" id="03"></span>
+                        <span class="square first-row" id="04"></span>
+                        <span class="square first-row" id="05"></span>
+                        <span class="square first-row" id="06"></span>
+                        <span class="square first-row" id="07"></span>
+                        <span class="square first-row" id="08"></span>
+                        <span class="square first-row last-square" id="09"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="10"></span>
+                        <span class="square" id="11"></span>
+                        <span class="square" id="12"></span>
+                        <span class="square" id="13"></span>
+                        <span class="square" id="14"></span>
+                        <span class="square" id="15"></span>
+                        <span class="square" id="16"></span>
+                        <span class="square" id="17"></span>
+                        <span class="square" id="18"></span>
+                        <span class="square last-square" id="19"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="20"></span>
+                        <span class="square" id="21"></span>
+                        <span class="square" id="22"></span>
+                        <span class="square" id="23"></span>
+                        <span class="square" id="24"></span>
+                        <span class="square" id="25"></span>
+                        <span class="square" id="26"></span>
+                        <span class="square" id="27"></span>
+                        <span class="square" id="28"></span>
+                        <span class="square last-square" id="29"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="30"></span>
+                        <span class="square" id="31"></span>
+                        <span class="square" id="32"></span>
+                        <span class="square" id="33"></span>
+                        <span class="square" id="34"></span>
+                        <span class="square" id="35"></span>
+                        <span class="square" id="36"></span>
+                        <span class="square" id="37"></span>
+                        <span class="square" id="38"></span>
+                        <span class="square last-square" id="39"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="40"></span>
+                        <span class="square" id="41"></span>
+                        <span class="square" id="42"></span>
+                        <span class="square" id="43"></span>
+                        <span class="square" id="44"></span>
+                        <span class="square" id="45"></span>
+                        <span class="square" id="46"></span>
+                        <span class="square" id="47"></span>
+                        <span class="square" id="48"></span>
+                        <span class="square last-square" id="49"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="50"></span>
+                        <span class="square" id="51"></span>
+                        <span class="square" id="52"></span>
+                        <span class="square" id="53"></span>
+                        <span class="square" id="54"></span>
+                        <span class="square" id="55"></span>
+                        <span class="square" id="56"></span>
+                        <span class="square" id="57"></span>
+                        <span class="square" id="58"></span>
+                        <span class="square last-square" id="59"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="60"></span>
+                        <span class="square" id="61"></span>
+                        <span class="square" id="62"></span>
+                        <span class="square" id="63"></span>
+                        <span class="square" id="64"></span>
+                        <span class="square" id="65"></span>
+                        <span class="square" id="66"></span>
+                        <span class="square" id="67"></span>
+                        <span class="square" id="68"></span>
+                        <span class="square last-square" id="69"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="70"></span>
+                        <span class="square" id="71"></span>
+                        <span class="square" id="72"></span>
+                        <span class="square" id="73"></span>
+                        <span class="square" id="74"></span>
+                        <span class="square" id="75"></span>
+                        <span class="square" id="76"></span>
+                        <span class="square" id="77"></span>
+                        <span class="square" id="78"></span>
+                        <span class="square last-square" id="79"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square first-square" id="80"></span>
+                        <span class="square" id="81"></span>
+                        <span class="square" id="82"></span>
+                        <span class="square" id="83"></span>
+                        <span class="square" id="84"></span>
+                        <span class="square" id="85"></span>
+                        <span class="square" id="86"></span>
+                        <span class="square" id="87"></span>
+                        <span class="square" id="88"></span>
+                        <span class="square last-square" id="89"></span>
+                    </div>
+
+                    <div class="row-grid">
+                        <span class="square last-row first-square" id="90"></span>
+                        <span class="square last-row" id="91"></span>
+                        <span class="square last-row" id="92"></span>
+                        <span class="square last-row" id="93"></span>
+                        <span class="square last-row" id="94"></span>
+                        <span class="square last-row" id="95"></span>
+                        <span class="square last-row" id="96"></span>
+                        <span class="square last-row" id="97"></span>
+                        <span class="square last-row" id="98"></span>
+                        <span class="square last-row last-square" id="99"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+
+</html>
